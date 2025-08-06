@@ -51,20 +51,17 @@ const openModal = (movie: Movie) => {
     openModal(movie);
   };
 
-  return (
-    <div className={css.app}>
-      <Toaster position="top-right" />
-      <SearchBar onSearch={handleSearch} />
-      {isLoading && <Loader/>}
-      {movies.length > 0 && (
+ return (
+  <div className={css.app}>
+    <Toaster position="top-right" />
+    <SearchBar onSearch={handleSearch} />
+    {isLoading && <Loader />}
+    {movies.length > 0 && (
       <MovieGrid movies={movies} onSelect={handleSelect} />
-          )}
-      {isError && <ErrorMessage/>}
-     
-       {isModalOpen && selectedMovie && (
-        <MovieModal movie={selectedMovie} onClose={closeModal} />
-      )} 
-    </div>,
-    );
-  }
-  
+    )}
+    {isError && <ErrorMessage />}
+    {isModalOpen && selectedMovie && (
+      <MovieModal movie={selectedMovie} onClose={closeModal} />
+    )}
+  </div>
+);
