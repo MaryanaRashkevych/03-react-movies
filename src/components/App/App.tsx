@@ -65,3 +65,4 @@ const openModal = (movie: Movie) => {
     )}
   </div>
 );
+};
